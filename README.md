@@ -1,18 +1,18 @@
-#Objective
+# Objective
 Traverse a workflow graph represented as a Directed Acyclic Graph (DAG), ensuring:
 
 A node executes only after all its parent nodes are executed.
 
 Child nodes are executed in parallel, if multiple.
 
-#Tools/Libraries Used
+# Tools/Libraries Used
 Python 3.10+
 
 collections.defaultdict for graph representation.
 
 threading module to simulate parallel execution of child nodes.
 
- #Assumptions
+ # Assumptions
 Input is well-formed as per given format (e.g., "1:Node-1" and "1:2").
 
 Node with key 1 is always the root/start node.
@@ -21,7 +21,7 @@ The graph does not contain cycles (DAG).
 
 We simulate parallelism using threads—no need for strict synchronization or shared state.
 
-#Design Decisions
+# Design Decisions
 Graph Representation: Adjacency list with defaultdict(list) for forward edges; in_degree map to track dependencies.
 
 Execution Strategy:
